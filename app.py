@@ -8,7 +8,7 @@ import base64
 
 
 
-st.set_page_config(page_title="Chat with Your AI Feng Shui Master", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Streaming Platform Recommender", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 #Context
 
@@ -38,30 +38,30 @@ st.markdown(f"""
 #gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
 
 # Fetch the GIF from the URL
-response = requests.get(gif_url)
+#response = requests.get(gif_url)
 
 # Convert the GIF to base64
-gif_base64 = base64.b64encode(response.content).decode('utf-8')
+#gif_base64 = base64.b64encode(response.content).decode('utf-8')
 
 # Display the GIF in Streamlit using base64-encoded string, center it, and adjust its height and position
-st.markdown(f"""
-<style>
-.center {{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 600px;
-    height: 400px; /* Adjust the height as needed */
-    margin-top: 10px; /* Push the GIF down */
-}}
-.caption {{
-    text-align: center;
-    margin-top: 20px; /* Adjust the margin-top as needed */
-}}
-</style>
-<img class="center" src="data:image/gif;base64,{gif_base64}" />
-<div class="caption">How Can I Help You Today?</div>
-""", unsafe_allow_html=True)
+#st.markdown(f"""
+#<style>
+#.center {{
+   # display: block;
+   # margin-left: auto;
+   # margin-right: auto;
+   # width: 600px;
+   # height: 400px; /* Adjust the height as needed */
+   # margin-top: 10px; /* Push the GIF down */
+#}}
+#.caption {{
+ #   text-align: center;
+  #  margin-top: 20px; /* Adjust the margin-top as needed */
+#}}
+#</style>
+#<img class="center" src="data:image/gif;base64,{gif_base64}" />
+#<div class="caption">How Can I Help You Today?</div>
+#""", unsafe_allow_html=True)
 
 
 
