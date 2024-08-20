@@ -4,3 +4,4 @@ openai==1.19.0
 Pillow
 requests
 pybase64
+langchain_community
