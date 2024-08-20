@@ -35,7 +35,7 @@ st.markdown(f"""
 """, unsafe_allow_html=True)
 
 # URL of the GIF you want to display
-gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
+#gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
 
 # Fetch the GIF from the URL
 response = requests.get(gif_url)
@@ -66,12 +66,12 @@ st.markdown(f"""
 
 
 # Display centered text
-#st.markdown("<p style='text-align: center;'>Welcome to the AI Feng Shui Master!</p>", unsafe_allow_html=True)
+#st.markdown("<p style='text-align: center;'>Welcome to the Streaming Platform Recommender!</p>", unsafe_allow_html=True)
 
 
 @st.cache_resource(show_spinner=False)
 def load_data():
-    with st.spinner(text="Harmonizing energy flow... Please wait while we balance the chi! This may take 1-2 minutes."):
+    with st.spinner(text="Loading your recommedation... Think about your favourite shows! This may take 1-2 minutes."):
         
         # Rebuild the storage context
         storage_context = StorageContext.from_defaults(persist_dir="./data/index.vecstore")
@@ -96,10 +96,10 @@ chat_engine = index.as_chat_engine(chat_mode="openai", verbose=True)
 
 if "messages" not in st.session_state.keys(): # Initialize the chat messages history
     st.session_state.messages = [
-        {"role": "assistant", "content": "Ask Me Feng Shui Questions Relating to Living Space 😊"}
+        {"role": "assistant", "content": "Ask Me Questions Relating to Streaming Platforms 😊"}
     ]
 
-if prompt := st.chat_input("Ask Me Feng Shui Questions Relating to Living Space"):
+if prompt := st.chat_input("Ask Me Questions Relating to Streaming Platforms"):
     # Save the original user question to the chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     st.session_state.new_question = True
