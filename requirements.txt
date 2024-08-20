@@ -1,5 +1,5 @@
 streamlit
-llama_index==0.8.64
+llama-index==0.8.64
 openai==1.19.0
 Pillow
 requests
