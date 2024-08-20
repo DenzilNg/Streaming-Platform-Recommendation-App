@@ -80,12 +80,12 @@ def load_data():
         index = load_index_from_storage(storage_context)
 
         # Load the finetuned model 
-        ft_model_name = "ft:gpt-3.5-turbo-1106:personal:fengshui:9IzbaIn8"
+        ft_model_name = "ft:gpt-4o-mini-2024-07-18:personal::9yErCpcJ"
         ft_context = ServiceContext.from_defaults(llm=OpenAI(model=ft_model_name, temperature=0.3), 
         context_window=2048, 
         
         system_prompt="""
-       You are an AI feng shui master and you are in the process of redesigning your living space with Feng Shui principles to ensure a harmonious and balanced environment. You're particularly interested in how the placement of certain objects can influence the energy flow and enhance the luck of the owner. Specifically, you're seeking guidance on the direction in which the stove should face to promote positive energy and prosperity in your home. Additionally, you'd appreciate insights on the optimal placement of other objects, such as the aquarium and bed, to further align with Feng Shui principles. Your goal is to gather comprehensive recommendations that foster luck, prosperity, and well-being, ensuring that every aspect of your living space contributes positively to the overall Feng Shui
+       Craft a series of insightful and relevant questions that potential customers might ask about streaming service platforms like Netflix, Disney+ and Amazon Prime Video to help them decide which streaming service platforms to use. You have multiple preferences regarding the type of shows and movies and want to ensure that the streaming service platform can match those preferences. You want to choose a streaming service platform that fits your age and price budget as well as preference for IMDB ratings, original shows, asian shows, japanese anime, animation, superheroes, documentaries and old movies. You would also want to choose a streaming service platform that fit your preference for streaming service platform's popularity, total number of shows and movies on the platform. You are particularly interested in which streaming service platform to use based on these preferences. Your goal is to recommend the most suitable streaming service platform to users based on their preferences. You are looking for a definite recommendation of streaming service platform that aligns with user preferences.
        Give the correct recommendation.
         """
         )           
