@@ -3,14 +3,9 @@ from llama_index import VectorStoreIndex, ServiceContext, Document, StorageConte
 from llama_index.llms import OpenAI
 import openai
 from PIL import Image
-import random
-from dotenv import load_dotenv, find_dotenv
-import os
-import json
 import requests
 import base64
-from io import BytesIO
-from streamlit_extras.let_it_rain import rain
+
 
 
 st.set_page_config(page_title="Chat with Your AI Feng Shui Master", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
@@ -18,8 +13,7 @@ st.set_page_config(page_title="Chat with Your AI Feng Shui Master", page_icon="�
 #Context
 
 # Set OpenAI API key
-_ = load_dotenv(find_dotenv()) # read local .env file
-openai.api_key = os.environ['OPENAI_API_KEY']
+openai.api_key = st.secrets.openai_key
 
 
 # URL of the image you want to display
@@ -68,6 +62,7 @@ st.markdown(f"""
 <img class="center" src="data:image/gif;base64,{gif_base64}" />
 <div class="caption">How Can I Help You Today?</div>
 """, unsafe_allow_html=True)
+
 
 
 # Display centered text
