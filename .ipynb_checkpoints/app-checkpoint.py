@@ -59,6 +59,17 @@ with tab1:
             st.image('images/amazon_prime_video.png', width=200)
         elif recommended_platform == 'Disney+':
             st.image('images/disney+.png', width=200)
+
+
+        # Use st.markdown with HTML to center and resize the image
+        st.markdown(
+            f"""
+            <div style="display: flex; justify-content: center;">
+                <img src="{image_path}" alt="{recommended_platform}" style="width:500px; height:auto;">
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
     
 
 #content for tab2
