@@ -51,6 +51,14 @@ with tab1:
         prediction = model.predict(input_data)  # Use the loaded model to make a prediction
         recommended_platform = class_mapping[prediction[0]]  # Map the numeric prediction to the platform name
         st.write(f'## Your Recommended Streaming Platform is: {recommended_platform}')
+
+        # Display the image based on the prediction
+        if recommended_platform == 'Netflix':
+            st.image('images/netflix.png', width=200)
+        elif recommended_platform == 'Amazon Prime Video':
+            st.image('images/amazon_prime_video.png', width=200)
+        elif recommended_platform == 'Disney+':
+            st.image('images/disney+.png', width=200)
     
 
 #content for tab2
