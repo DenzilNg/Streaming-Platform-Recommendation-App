@@ -54,22 +54,20 @@ with tab1:
 
         # Display the image based on the prediction
         if recommended_platform == 'Netflix':
-            st.image('images/netflix.png', width=200)
+            image_path = 'images/netflix.png'
         elif recommended_platform == 'Amazon Prime Video':
-            st.image('images/amazon_prime_video.png', width=200)
+            image_path = 'images/amazon_prime_video.png'
         elif recommended_platform == 'Disney+':
-            st.image('images/disney+.png', width=200)
-
-
-        # Use st.markdown with HTML to center and resize the image
-        st.markdown(
-            f"""
-            <div style="display: flex; justify-content: center;">
-                <img src="{image_path}" alt="{recommended_platform}" style="width:500px; height:auto;">
-            </div>
-            """,
-            unsafe_allow_html=True
-        )
+            image_path = 'images/disney+.png'
+        
+        # Center the image using columns
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col1:
+            pass
+        with col2:
+            st.image(image_path, width=500)  # Adjust the width to 500
+        with col3:
+            pass
     
 
 #content for tab2
