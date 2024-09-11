@@ -11,7 +11,7 @@ import sklearn
 
 
 # Create tabs
-tab1, tab2, tab3 = st.tabs(["Recomendations", "CHATBOT"])
+tab1, tab2 = st.tabs(["Recomendations", "CHATBOT"])
 
 #content for tab1
 with tab1:
