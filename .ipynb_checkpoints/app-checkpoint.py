@@ -9,6 +9,9 @@ import pandas as pd
 import pickle
 import sklearn
 
+# Set the page configuration
+st.set_page_config(page_title="Streaming Platform Recommendations", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 # Create tabs
 tab1, tab2= st.tabs(["Streaming Platform Recommender", "Streaming Platform CHATBOT"])
 
@@ -21,9 +24,6 @@ with tab1:
     # Load the PyCaret model
     with open('model.pkl', 'rb') as file:
         model = pickle.load(file)
-
-    # Set Page configuration
-    st.set_page_config(page_title='Which platform is the best for you?')
 
     # Set input widgets
     st.sidebar.subheader('Input values below')
