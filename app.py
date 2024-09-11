@@ -20,7 +20,7 @@ st.set_page_config(
 st.title("Welcome to the Streaming Platform Recommendation App")
 
 # Display a .webp image in Streamlit
-st.image('images/chatbot.webp', width = 400)
+st.image('images/chatbot.webp', width = 300)
 
 # Create tabs
 tab1, tab2= st.tabs(["Streaming Platform Recommender", "Streaming Platform CHATBOT"])
