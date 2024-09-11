@@ -79,7 +79,7 @@ with tab2:
 
 
     # Display a .webp image in Streamlit
-    st.image('path_to_image/your_image.webp')
+    st.image('images/chatbot.webp')
 
     # Center the image and make it larger using HTML and CSS
     st.markdown(
