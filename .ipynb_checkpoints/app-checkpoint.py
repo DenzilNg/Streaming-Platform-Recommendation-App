@@ -79,7 +79,7 @@ with tab2:
 
 
     # Display a .webp image in Streamlit
-    st.image('images/chatbot.webp', width = 400)
+    st.image('images/chatbot.webp', width = 500)
 
 
     # URL of the GIF you want to display
