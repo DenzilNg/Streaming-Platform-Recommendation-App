@@ -21,10 +21,6 @@ with tab1:
     file_path = 'data/user.csv'
     data = pd.read_csv(file_path)
 
-    # Load the PyCaret model
-    with open('model.pkl', 'rb') as file:
-        model = pickle.load(file)
-
     # Set input widgets
     st.sidebar.subheader('Input values below')
     Age = st.sidebar.slider('What is your age?', 0, 80, 30)
