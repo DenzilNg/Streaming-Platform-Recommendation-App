@@ -9,14 +9,14 @@ import pandas as pd
 import pickle
 import sklearn
 
+# Set the page configuration
+st.set_page_config(page_title="Streaming Platform Recommender", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # Create tabs
 tab1, tab2= st.tabs(["Recomendations", "CHATBOT"])
 
 #content for tab1
 with tab1:
-    st.set_page_config(page_title="Streaming Platform Recommender", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
-    
     # Load the dataset (for column reference)
     file_path = 'data/user.csv'
     data = pd.read_csv(file_path)
@@ -62,8 +62,6 @@ with tab1:
 
 #content for tab2
 with tab2:
-    st.set_page_config(page_title="Streaming Platform Chatbot", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
-
     #Context
 
     # Set OpenAI API key
