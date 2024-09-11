@@ -12,6 +12,9 @@ import sklearn
 # Set the page configuration
 st.set_page_config(page_title="Streaming Platform Recommendations", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
+# Display a .webp image in Streamlit
+st.image('images/chatbot.webp', width = 500)
+
 # Create tabs
 tab1, tab2= st.tabs(["Streaming Platform Recommender", "Streaming Platform CHATBOT"])
 
