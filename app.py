@@ -81,20 +81,15 @@ with tab2:
     # URL of the image you want to display
     image_url = 'images/chatbot.webp'
 
-    # Display the image in Streamlit using HTML and CSS
-    st.markdown(f"""
-    <style>
-    .shifted-image {{
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 600px;
-        height: 160px; /* Adjust the height as needed */
-        margin-top: 50px; /* Adjust this value to bring the image closer to the top */
-    }}
-    </style>
-    <img class="shifted-image" src="{image_url}" />
-    """, unsafe_allow_html=True)
+    # Center the image and make it larger using HTML and CSS
+    st.markdown(
+        f"""
+        <div style="display: flex; justify-content: center;">
+            <img src="{image_url}" alt="webp image" style="width:400px; height:auto;">
+        </div>
+        """, 
+        unsafe_allow_html=True
+    )
 
     # URL of the GIF you want to display
     #gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
