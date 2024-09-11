@@ -9,6 +9,7 @@ import pandas as pd
 import pickle
 import sklearn
 
+st.set_page_config(page_title="Streaming Platform Recommender", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # Create tabs
 tab1, tab2 = st.tabs(["Recomendations", "CHATBOT"])
@@ -60,7 +61,6 @@ with tab1:
 
 #content for tab2
 with tab2:
-    st.set_page_config(page_title="Streaming Platform Recommender", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
     #Context
 
