@@ -13,7 +13,7 @@ import sklearn
 st.set_page_config(page_title="Streaming Platform Recommendations", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 # Display a .webp image in Streamlit
-st.image('images/chatbot.webp', width = 500)
+st.image('images/chatbot.webp', width = 400)
 
 # Create tabs
 tab1, tab2= st.tabs(["Streaming Platform Recommender", "Streaming Platform CHATBOT"])
@@ -81,45 +81,7 @@ with tab2:
     openai.api_key = st.secrets.openai_key
 
 
-    # Display a .webp image in Streamlit
-    st.image('images/chatbot.webp', width = 500)
-
-
-    # URL of the GIF you want to display
-    #gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
-    
-    # Fetch the GIF from the URL
-    #response = requests.get(gif_url)
-    
-    # Convert the GIF to base64
-    #gif_base64 = base64.b64encode(response.content).decode('utf-8')
-    
-    # Display the GIF in Streamlit using base64-encoded string, center it, and adjust its height and position
-    #st.markdown(f"""
-    #<style>
-    #.center {{
-       # display: block;
-       # margin-left: auto;
-       # margin-right: auto;
-       # width: 600px;
-       # height: 400px; /* Adjust the height as needed */
-       # margin-top: 10px; /* Push the GIF down */
-    #}}
-    #.caption {{
-     #   text-align: center;
-      #  margin-top: 20px; /* Adjust the margin-top as needed */
-    #}}
-    #</style>
-    #<img class="center" src="data:image/gif;base64,{gif_base64}" />
-    #<div class="caption">How Can I Help You Today?</div>
-    #""", unsafe_allow_html=True)
-    
-    
-    
-    # Display centered text
-    #st.markdown("<p style='text-align: center;'>Welcome to the Streaming Platform Recommender!</p>", unsafe_allow_html=True)
-    
-    
+    #Prepare a line while users are waiting for their results
     @st.cache_resource(show_spinner=False)
     def load_data():
         with st.spinner(text="Loading your recommedation... Think about your favourite shows! This may take 1-2 minutes."):
