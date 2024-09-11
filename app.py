@@ -79,7 +79,7 @@ with tab2:
 
 
     # URL of the image you want to display
-    image_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/FS%20_Banner.png?raw=true"
+    image_url = 'images/chatbot.webp'
 
     # Display the image in Streamlit using HTML and CSS
     st.markdown(f"""
