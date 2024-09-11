@@ -10,7 +10,14 @@ import pickle
 import sklearn
 
 # Set the page configuration
-st.set_page_config(page_title="Streaming Platform Recommendations", page_icon="👩🏻‍🏫", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(
+    page_title="Streaming Platform Recommendation",
+    page_icon="🎬",  # Can be an emoji or path to an image file
+    layout="wide",   # "centered" (default) or "wide"
+    initial_sidebar_state="expanded",  # "collapsed" or "expanded"
+)
+
+st.title("Welcome to the Streaming Platform Recommendation App")
 
 # Display a .webp image in Streamlit
 st.image('images/chatbot.webp', width = 400)
