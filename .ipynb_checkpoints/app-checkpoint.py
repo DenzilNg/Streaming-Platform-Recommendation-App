@@ -79,17 +79,8 @@ with tab2:
 
 
     # Display a .webp image in Streamlit
-    st.image('images/chatbot.webp')
+    st.image('images/chatbot.webp', width = 400)
 
-    # Center the image and make it larger using HTML and CSS
-    st.markdown(
-        f"""
-        <div style="display: flex; justify-content: center;">
-            <img src="{image_url}" alt="webp image" style="width:400px; height:auto;">
-        </div>
-        """, 
-        unsafe_allow_html=True
-    )
 
     # URL of the GIF you want to display
     #gif_url = "https://github.com/yuanman88/yuanman88.github.io/blob/main/AI_Fengshui.gif?raw=true"
