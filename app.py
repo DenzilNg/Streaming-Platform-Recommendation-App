@@ -17,6 +17,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",  # "collapsed" or "expanded"
 )
 
+#Display page title
 st.title("Welcome to the Streaming Platform Recommendation App")
 
 # Display a .webp image in Streamlit
@@ -25,13 +26,13 @@ st.image('images/chatbot.webp', width = 300)
 # Create tabs
 tab1, tab2= st.tabs(["Streaming Platform Recommender", "Streaming Platform CHATBOT"])
 
-#content for tab1
+#Content for tab1
 with tab1:
     # Load the dataset (for column reference)
     file_path = 'data/user.csv'
     data = pd.read_csv(file_path)
 
-    # Set input widgets
+    # Set input widgets which are the 12 variables
     st.sidebar.subheader('Input values below')
     Age = st.sidebar.slider('What is your age?', 0, 80, 30)
     Price = st.sidebar.number_input('How much are you willing to pay for the streaming platform?', min_value=0, max_value=25, value=10)
@@ -99,39 +100,46 @@ with tab2:
             # Load the index
             index = load_index_from_storage(storage_context)
     
-            # Load the finetuned model 
+            # Load the best performing model gpt-4 
             ft_model_name = "gpt-4"
             ft_context = ServiceContext.from_defaults(llm=OpenAI(model=ft_model_name, temperature=0.3), 
             context_window=2048, 
-            
+
+            # Provide system prompt                                        
             system_prompt="""
            Craft a series of insightful and relevant questions that potential customers might ask about streaming service platforms like Netflix, Disney+ and Amazon Prime Video to help them decide which streaming service platforms to use. You have multiple preferences regarding the type of shows and movies and want to ensure that the streaming service platform can match those preferences. You want to choose a streaming service platform that fits your age and price budget as well as preference for IMDB ratings, original shows, asian shows, japanese anime, animation, superheroes, documentaries and old movies. You would also want to choose a streaming service platform that fit your preference for streaming service platform's popularity, total number of shows and movies on the platform. You are particularly interested in which streaming service platform to use based on these preferences. Your goal is to recommend the most suitable streaming service platform to users based on their preferences. You are looking for a definite recommendation of streaming service platform that aligns with user preferences.
            Give the correct recommendation.
             """
             )           
             return index
-    
+
+    # Load the data and initialize the chat engine using the index with OpenAI's chat model in verbose mode
     index = load_data()
     chat_engine = index.as_chat_engine(chat_mode="openai", verbose=True)
-    
+
+    # Check if chat messages history is initialized; if not, initialize it with a default assistant message
     if "messages" not in st.session_state.keys(): # Initialize the chat messages history
         st.session_state.messages = [
             {"role": "assistant", "content": "Ask Me Questions Relating to Streaming Platforms 😊"}
         ]
-    
+
+    # Check if the user has entered a new question, and if so, append it to the chat history
     if prompt := st.chat_input("Ask Me Questions Relating to Streaming Platforms"):
         # Save the original user question to the chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
+        # Flag that a new question has been asked
         st.session_state.new_question = True
     
         # Create a detailed prompt for the chat engine
         chat_history = ' '.join([message["content"] for message in st.session_state.messages])
         detailed_prompt = f"{chat_history} {prompt}"
-    
+
+    # If a new question has been asked, display the entire chat history
     if "new_question" in st.session_state.keys() and st.session_state.new_question:
-       for message in st.session_state.messages: # Display the prior chat messages
+       for message in st.session_state.messages: # Loop through and display prior chat messages
            with st.chat_message(message["role"]):
                st.write(message["content"])
+       # Reset the new_question flag to False after displaying the messages
        st.session_state.new_question = False # Reset new_question to False
     
     # If last message is not from assistant, generate a new response
