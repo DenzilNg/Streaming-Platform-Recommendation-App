@@ -30,13 +30,13 @@ Disney+
 Amazon Prime Video
 
 3 classification models were used. The models used as well as the results gotten can be view here:
-[View Streaming platform classification model](https://github.com/D3nz1ll/Denzil_capstone_chatbot_GitHub/blob/main/2._Streaming_platform_classification_model.ipynb)
+[2. Streaming platform classification model](https://github.com/D3nz1ll/Denzil_capstone_chatbot_GitHub/blob/main/2._Streaming_platform_classification_model.ipynb)
 
 #### 2. AI Chatbot Integration
 An AI chatbot using gpt models has been trained using a questions & answers dataset, allowing users to interact and receive answers about platform features, pricing, and recommendations.
 
 3 gpt models were used. The models used as well as the results gotten can be view here:
-[View Streaming CHATBOT model](https://github.com/D3nz1ll/Denzil_capstone_chatbot_GitHub/blob/main/3._reaming_CHATBOT.ipynb)
+[3. Streaming CHATBOT model](https://github.com/D3nz1ll/Denzil_capstone_chatbot_GitHub/blob/main/3._reaming_CHATBOT.ipynb)
 
 ## Demo
 The app demonstrates how users can input their preferences and see which streaming platform is most suitable for them. It also integrates a chatbot for interactive queries.The demo app can be viewed here:
