@@ -40,7 +40,7 @@ An AI chatbot using gpt models has been trained using a questions & answers data
 
 ## Demo
 The app demonstrates how users can input their preferences and see which streaming platform is most suitable for them. It also integrates a chatbot for interactive queries.The demo app can be viewed here:
-[View Streamlit App](https://denzilcapstone-recommenderandchatbot.streamlit.app/)
+[View Streaming Platform Recommendation App](https://denzilcapstone-recommenderandchatbot.streamlit.app/)
 
 
 ## Future Work
