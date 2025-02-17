@@ -103,7 +103,7 @@ with tab2:
             # Load the best performing model gpt-4 
             ft_model_name = "gpt-4"
             ft_context = ServiceContext.from_defaults(llm=OpenAI(model=ft_model_name, temperature=0.3), 
-            context_window=2048, 
+            context_window=2048) 
 
             # Provide system prompt                                        
             system_prompt="""
