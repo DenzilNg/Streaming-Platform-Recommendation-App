@@ -109,8 +109,7 @@ with tab2:
             system_prompt="""
            Craft a series of insightful and relevant questions that potential customers might ask about streaming service platforms like Netflix, Disney+ and Amazon Prime Video to help them decide which streaming service platforms to use. You have multiple preferences regarding the type of shows and movies and want to ensure that the streaming service platform can match those preferences. You want to choose a streaming service platform that fits your age and price budget as well as preference for IMDB ratings, original shows, asian shows, japanese anime, animation, superheroes, documentaries and old movies. You would also want to choose a streaming service platform that fit your preference for streaming service platform's popularity, total number of shows and movies on the platform. You are particularly interested in which streaming service platform to use based on these preferences. Your goal is to recommend the most suitable streaming service platform to users based on their preferences. You are looking for a definite recommendation of streaming service platform that aligns with user preferences.
            Give the correct recommendation.
-            """
-            )           
+            """           
             return index
 
     # Load the data and initialize the chat engine using the index with OpenAI's chat model in verbose mode
